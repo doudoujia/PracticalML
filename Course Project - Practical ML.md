@@ -224,7 +224,9 @@ dim(testData)
 
 
 ```R
+## Using 5-fold cross validation method
 control = trainControl(method="cv", 5)
+## Apply Ramdom Forest algorithm
 model = train(classe ~ ., data=trainData, method="rf", trControl=control, ntree=200)
 # model_CT <- train(classe~., data=trainData, method="rpart", trControl=control)
 model
@@ -261,6 +263,8 @@ plot(model$finalModel)
 ![png](output_23_0.png)
     
 
+
+#### From the graph, we can see that when the numer of trees reachs about 50, the models get to their best performances.
 
 ### Proformance of the Model
 
@@ -309,6 +313,8 @@ confusionMatrix(testData$classe,Pred_Result)
     Balanced Accuracy      0.9997   0.9993   0.9988   0.9983   0.9998
 
 
+#### Ramdom Forest gives an in-sample accuracy of 0.9988, error < 0.001, which is very good. I expected that it would be at the similar accuracy level for out-of-sample error
+
 
 ```R
 Pred_Result_test = predict(model,testingCleaned)
@@ -356,11 +362,6 @@ Pred_Result_test
 	</ol>
 </details>
 
-
-
-```R
-
-```
 
 
 ```R
