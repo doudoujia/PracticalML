@@ -14779,7 +14779,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[110]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">control</span> <span class="o">=</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;cv&quot;</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">## Using 5-fold cross validation method</span>
+<span class="n">control</span> <span class="o">=</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;cv&quot;</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="c1">## Apply Ramdom Forest algorithm</span>
 <span class="n">model</span> <span class="o">=</span> <span class="nf">train</span><span class="p">(</span><span class="n">classe</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;rf&quot;</span><span class="p">,</span> <span class="n">trControl</span><span class="o">=</span><span class="n">control</span><span class="p">,</span> <span class="n">ntree</span><span class="o">=</span><span class="m">200</span><span class="p">)</span>
 <span class="c1"># model_CT &lt;- train(classe~., data=trainData, method=&quot;rpart&quot;, trControl=control)</span>
 <span class="n">model</span>
@@ -15066,6 +15068,11 @@ kAAHCBLgwH+NsyvOteU29wAAAABJRU5ErkJggg=="
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="From-the-graph,-we-can-see-that-when-the-numer-of-trees-reachs-about-50,-the-models-get-to-their-best-performances.">From the graph, we can see that when the numer of trees reachs about 50, the models get to their best performances.<a class="anchor-link" href="#From-the-graph,-we-can-see-that-when-the-numer-of-trees-reachs-about-50,-the-models-get-to-their-best-performances.">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Proformance-of-the-Model">Proformance of the Model<a class="anchor-link" href="#Proformance-of-the-Model">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15085,7 +15092,7 @@ kAAHCBLgwH+NsyvOteU29wAAAABJRU5ErkJggg=="
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[123]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">testData</span><span class="o">$</span><span class="n">classe</span><span class="p">,</span><span class="n">Pred_Result</span><span class="p">)</span>
@@ -15150,6 +15157,11 @@ Balanced Accuracy      0.9997   0.9993   0.9988   0.9983   0.9998</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Ramdom-Forest-gives-an-in-sample-accuracy-of-0.9988,-error-&lt;-0.001,-which-is-very-good.-I-expected-that-it-would-be-at-the-similar-accuracy-level-for-out-of-sample-error">Ramdom Forest gives an in-sample accuracy of 0.9988, error &lt; 0.001, which is very good. I expected that it would be at the similar accuracy level for out-of-sample error<a class="anchor-link" href="#Ramdom-Forest-gives-an-in-sample-accuracy-of-0.9988,-error-&lt;-0.001,-which-is-very-good.-I-expected-that-it-would-be-at-the-similar-accuracy-level-for-out-of-sample-error">&#182;</a></h4>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15232,20 +15244,6 @@ Balanced Accuracy      0.9997   0.9993   0.9988   0.9983   0.9998</pre>
 
 </div>
 
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
